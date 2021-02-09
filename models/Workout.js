@@ -7,7 +7,7 @@ const WorkoutSchema = new Schema({
     name:
     {
         type: String,
-        required: "Please name your exercise"
+        required: "Please enter a workout!"
     },
 
     exercises: [

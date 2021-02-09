@@ -7,11 +7,11 @@ const ExerciseSchema = new Schema(
         name:
         {
             type: String,
-            required: "Enter an exercise name",
+            required: "Enter a specific exercise",
             trim: true,
         },
 
-        rep:
+        reps:
         {
             type: Number,
             required: "Rep Count"
