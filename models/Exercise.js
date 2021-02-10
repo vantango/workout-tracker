@@ -11,18 +11,33 @@ const ExerciseSchema = new Schema(
             trim: true,
         },
 
+        type:
+        {
+            type: String,
+            required: "Enter a type"
+        },
+
+        sets:
+        {
+            type: Number,
+        },
+
         reps:
         {
             type: Number,
-            required: "Rep Count"
         },
 
-        unit: {
+        weight: {
             type: String,
-            required: "Unit"
+            required: "Weight"
         },
 
-        notes: String,
+        duration:
+        {
+            type: Number,
+            required: "How long was your workout?"
+        },
+
     });
 
 const Exercise = mongoose.model("Exercise", ExerciseSchema);
