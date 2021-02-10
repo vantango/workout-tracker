@@ -17,16 +17,17 @@
 
     <div class="container">
         <div class="row" id="addWorkout">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="input-group mb-3">
                     <div>
                         <button class="btn btn-secondary" id="updateWorkout" type="button">
-                            Continue your previous Workout!
+                            Continue previous workout!
                         </button>
-                        <button class="btn btn-primary" id="addWorkout" type="button">Add a
+                        <button class="btn btn-primary" id="addingWorkout" type="button">Add a
                             Workout!</button>
                     </div>
-                    <form id="addExercise">
+
+                    <form class="hide" id="addExercise">
                         <div class="workout-type">
                             <label for="type">Workout Type:</label>
                             <select name="type" id="type">
@@ -35,30 +36,36 @@
                                 <option value="cardio">Cardio</option>
                             </select>
                         </div>
-                        <div class="exercise-type">
-                            <label for="type">Exercise Type:</label>
-                            <input id="type" type="text" placeholder="Bench Press or Running, etc"
-                                aria-label="Workout name" aria-describedby="button-addon2">
+                        <div class="row">
+                            <div class="exercise-type">
+                                <label for="type">Exercise Type:</label>
+                                <input id="type" type="text" placeholder="Bench Press, running, etc"
+                                    aria-label="Workout name">
+                            </div>
                         </div>
-                        <div class="exercise-type">
-                            <label for="type">Exercise Sets:</label>
-                            <input id="sets" type="number" placeholder="How many sets?" aria-label="Workout type"
-                                aria-describedby="button-addon2">
+                        <div class="row">
+                            <div class="exercise-sets">
+                                <label for="type">Number of Sets:</label>
+                                <input id="sets" type="number" placeholder="How many sets?" aria-label="Workout type">
+                            </div>
                         </div>
-                        <div class="exercise-type">
-                            <label for="type">Exercise Reps:</label>
-                            <input id="reps" type="number" placeholder="How many reps?" aria-label="Workout name"
-                                aria-describedby="button-addon2">
+                        <div class="row">
+                            <div class="exercise-reps">
+                                <label for="type">Number of Reps:</label>
+                                <input id="reps" type="number" placeholder="15 reps" aria-label="Workout name">
+                            </div>
                         </div>
-                        <div class="exercise-type">
-                            <label for="type">Exercise Weight:</label>
-                            <input id="weight" type="number" placeholder="How much weight?" aria-label="Workout name"
-                                aria-describedby="button-addon2">
+                        <div class="row">
+                            <div class="exercise-weight">
+                                <label for="type">Weight for exercise:</label>
+                                <input id="weight" type="number" placeholder="30 lbs" aria-label="Workout name">
+                            </div>
                         </div>
-                        <div class="exercise-type">
-                            <label for="type">Exercise Duration:</label>
-                            <input id="duration" type="text" placeholder="25 minutes" aria-label="Workout name"
-                                aria-describedby="button-addon2">
+                        <div class="row">
+                            <div class="exercise-duration">
+                                <label for="type">Exercise Duration:</label>
+                                <input id="duration" type="number" placeholder="25 minutes" aria-label="Workout name">
+                            </div>
                         </div>
                         <button class="submitExercise">Submit Exercise!</button>
                     </form>
