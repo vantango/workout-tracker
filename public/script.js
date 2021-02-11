@@ -5,7 +5,7 @@ $("#addingWorkout").on("click", function () {
         data: Date.now()
     }).then(function (data) {
         console.log(data);
-        $("#addExercise").toggleClass("hide")
+        $("#addExercise").removeClass("hide")
         console.log("success");
     })
 })
