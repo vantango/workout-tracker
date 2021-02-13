@@ -40,6 +40,7 @@ app.post("/addworkout", (req, res) => {
 });
 
 app.post("/addexercise", ({ body }, res) => {
+    console.log("add exercise", body);
     db.Exercise.create(body)
         .then(({ _id }) => db.Workout.findOneAndUpdate({}, { $push: { exercises: _id } }, { new: true }))
         .then(dbWorkout => {

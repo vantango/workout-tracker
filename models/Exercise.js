@@ -29,7 +29,6 @@ const ExerciseSchema = new Schema(
 
         weight: {
             type: String,
-            required: "Weight"
         },
 
         duration:
@@ -37,6 +36,10 @@ const ExerciseSchema = new Schema(
             type: Number,
             required: "How long was your workout?"
         },
+        distance:
+        {
+            type: Number
+        }
 
     });
 
