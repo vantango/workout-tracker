@@ -44,14 +44,34 @@ $("select").change(function (event) {
     workoutType = event.target.value;
     console.log(workoutType);
     if (workoutType === "cardio") {
-        $("#weight").addClass("hide");
-        $("#reps").addClass("hide");
-        $("#sets").addClass("hide");
-        $("#distance").removeClass("hide");
+        $(".exercise-weight").addClass("hide");
+        $(".exercise-reps").addClass("hide");
+        $(".exercise-sets").addClass("hide");
+        $(".exercise-distance").removeClass("hide");
     } else {
-        $("#distance").addClass("hide");
-        $("#weight").removeClass("hide");
-        $("#reps").removeClass("hide");
-        $("#sets").removeClass("hide");
+        $(".exercise-distance").addClass("hide");
+        $(".exercise-weight").removeClass("hide");
+        $(".exercise-reps").removeClass("hide");
+        $(".exercise-sets").removeClass("hide");
     }
+})
+
+$("#previousWorkout").on("click", function (event) {
+    event.preventDefault()
+
+    $.ajax({
+        method: "GET",
+        url: "/previousworkout"
+    }).then(function (data) {
+        console.log(data);
+        if (data.length > 0) {
+            const latestWorkoutId = data[0]._id
+            $("#addExercise").removeClass("hide")
+            console.log(latestWorkoutId);
+            // Appending most recent workout ID to address bar
+            // location.search = "?id=" + latestWorkoutId
+        }
+
+
+    })
 })

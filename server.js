@@ -61,6 +61,19 @@ app.put("/update/:id", (req, res) => {
         });
 });
 
+app.get("/previousworkout", (req, res) => {
+    db.Workout.find().sort({
+        _id: -1
+    }).limit(1)
+        .then(dbWorkout => {
+            console.log(("latest record", dbWorkout));
+            res.json(dbWorkout);
+        })
+        .catch(err => {
+            res.json(err);
+        });
+})
+
 
 
 
