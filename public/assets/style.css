@@ -1,3 +1,10 @@
+body {
+    background-image: url("https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1268&q=80");
+    background-size: cover; 
+    background-repeat: no-repeat;
+    min-height: 100vh; 
+}
+
 #addWorkout {
     justify-content: center;
     align-items: center;
@@ -6,6 +13,13 @@
 .header {
     text-align: center;
     font-family: 'Bangers', cursive;
+    color: white;
+    padding-top: 10%;
+}
+
+.input-group {
+    justify-content: center;
+    align-items: center;
 }
 
 .hide {
@@ -15,4 +29,12 @@
 .col-md-6 {
     justify-content: center;
     align-items: center;
+}
+
+#prevWorkout {
+    margin-top: 5%;
+}
+
+#exerciseInput {
+    margin-top: 5%;
 }

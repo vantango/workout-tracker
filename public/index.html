@@ -21,74 +21,88 @@
                 <div class="input-group mb-3">
                     <div>
                         <button class="btn btn-secondary" id="previousWorkout" type="button">
-                            Continue previous workout!
+                            Continue previous workout?
                         </button>
-                        <button class="btn btn-primary" id="addingWorkout" type="button">Add a
+                        <button class="btn btn-primary" id="addingWorkout" type="button">Add a new
                             Workout!</button>
                     </div>
-
-                    <form class="hide" id="addExercise">
-                        <div class="workout-type">
-                            <label for="type">Workout Type:</label>
-                            <select name="type" id="type">
-                                <option disabled selected>Select Exercise Type</option>
-                                <option value="resistance">Resistance</option>
-                                <option value="cardio">Cardio</option>
-                            </select>
+                    <div class="card hide" id="exerciseInput" style="width: 23rem;">
+                        <div class="card-body">
+                            <form class="hide" id="addExercise">
+                                <div class="workout-type">
+                                    <label for="type">Workout Type:</label>
+                                    <select name="type" id="type">
+                                        <option disabled selected>Select Exercise Type</option>
+                                        <option value="resistance">Resistance</option>
+                                        <option value="cardio">Cardio</option>
+                                    </select>
+                                </div>
+                                <div class="row">
+                                    <div class="exercise-type">
+                                        <label for="type">Exercise Type:</label>
+                                        <input id="name" type="text" placeholder="bench press, running, etc"
+                                            aria-label="Workout name">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="exercise-sets">
+                                        <label for="type">Number of Sets:</label>
+                                        <input id="sets" type="number" placeholder="How many sets?"
+                                            aria-label="Workout type">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="exercise-reps">
+                                        <label for="type">Number of Reps:</label>
+                                        <input id="reps" type="number" placeholder="15 reps" aria-label="Workout name">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="exercise-weight">
+                                        <label for="type">Weight for exercise:</label>
+                                        <input id="weight" type="number" placeholder="30 lbs" aria-label="Workout name">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="exercise-duration">
+                                        <label for="type">Exercise Duration:</label>
+                                        <input id="duration" type="number" placeholder="25 minutes"
+                                            aria-label="Workout name">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="exercise-distance">
+                                        <label for="type">Exercise Distance:</label>
+                                        <input id="distance" type="number" placeholder="5 miles"
+                                            aria-label="Workout name">
+                                    </div>
+                                </div>
+                                <button class="submitExercise">Submit Exercise!</button>
+                            </form>
                         </div>
-                        <div class="row">
-                            <div class="exercise-type">
-                                <label for="type">Exercise Type:</label>
-                                <input id="name" type="text" placeholder="bench press, running, etc"
-                                    aria-label="Workout name">
-                            </div>
+                    </div>
+                    <div class=" card hide" id="prevWorkout" style="width: 23rem;">
+                        <div class="card-body">
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, modi libero? Aperiam
+                                quod saepe animi molestiae facere a, officiis, natus provident totam consequuntur
+                                reiciendis. Perspiciatis necessitatibus quidem vero esse voluptates.
+                            </p>
                         </div>
-                        <div class="row">
-                            <div class="exercise-sets">
-                                <label for="type">Number of Sets:</label>
-                                <input id="sets" type="number" placeholder="How many sets?" aria-label="Workout type">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="exercise-reps">
-                                <label for="type">Number of Reps:</label>
-                                <input id="reps" type="number" placeholder="15 reps" aria-label="Workout name">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="exercise-weight">
-                                <label for="type">Weight for exercise:</label>
-                                <input id="weight" type="number" placeholder="30 lbs" aria-label="Workout name">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="exercise-duration">
-                                <label for="type">Exercise Duration:</label>
-                                <input id="duration" type="number" placeholder="25 minutes" aria-label="Workout name">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="exercise-distance">
-                                <label for="type">Exercise Distance:</label>
-                                <input id="distance" type="number" placeholder="5 miles" aria-label="Workout name">
-                            </div>
-                        </div>
-                        <button class="submitExercise">Submit Exercise!</button>
-                    </form>
+                    </div>
                 </div>
                 <div id="summary">
 
                 </div>
             </div>
         </div>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>

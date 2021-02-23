@@ -8,6 +8,8 @@ $("#addingWorkout").on("click", function () {
     }).then(function (data) {
         console.log(data);
         $("#addExercise").removeClass("hide")
+        $("#exerciseInput").removeClass("hide")
+        $("#prevWorkout").addClass("hide")
         console.log("success");
     })
 })
@@ -58,7 +60,6 @@ $("select").change(function (event) {
 
 $("#previousWorkout").on("click", function (event) {
     event.preventDefault()
-
     $.ajax({
         method: "GET",
         url: "/previousworkout"
@@ -67,6 +68,8 @@ $("#previousWorkout").on("click", function (event) {
         if (data.length > 0) {
             const latestWorkoutId = data[0]._id
             $("#addExercise").removeClass("hide")
+            $("#exerciseInput").removeClass("hide")
+            $("#prevWorkout").removeClass("hide")
             console.log(latestWorkoutId);
             // Appending most recent workout ID to address bar
             // location.search = "?id=" + latestWorkoutId
