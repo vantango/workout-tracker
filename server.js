@@ -39,10 +39,10 @@ app.post("/addworkout", (req, res) => {
         });
 });
 
-app.post("/addexercise", ({ body }, res) => {
-    console.log("add exercise", body);
+app.post("/addexercise/:workoutid", ({ body, params }, res) => {
+    console.log("add exercise", body, params.workoutid);
     db.Exercise.create(body)
-        .then(({ _id }) => db.Workout.findOneAndUpdate({}, { $push: { exercises: _id } }, { new: true }))
+        .then(({ _id }) => db.Workout.findOneAndUpdate(params.workoutid, { $push: { exercises: _id } }, { new: true }))
         .then(dbWorkout => {
             res.json(dbWorkout);
         })
@@ -68,6 +68,35 @@ app.get("/previousworkout", (req, res) => {
         .then(dbWorkout => {
             console.log(("latest record", dbWorkout));
             res.json(dbWorkout);
+        })
+        .catch(err => {
+            res.json(err);
+        });
+})
+
+app.get("/populateexercise", (req, res) => {
+    db.Workout.find().sort({
+        _id: -1
+    }).limit(1)
+        .then(dbWorkout => {
+            console.log(("latest record", dbWorkout));
+            if (dbWorkout.length > 0) {
+                const latestWorkoutId = dbWorkout[0]._id
+                console.log(latestWorkoutId);
+
+
+                db.Workout.findOne({
+                    _id: latestWorkoutId
+                })
+                    .populate("exercises")
+                    .then(dbExercise => {
+                        console.log(("populate exercise", dbExercise));
+                        res.json(dbExercise);
+                    })
+                    .catch(err => {
+                        res.json(err);
+                    });
+            }
         })
         .catch(err => {
             res.json(err);

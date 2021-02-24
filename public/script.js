@@ -10,6 +10,7 @@ $("#addingWorkout").on("click", function () {
         $("#addExercise").removeClass("hide")
         $("#exerciseInput").removeClass("hide")
         $("#prevWorkout").addClass("hide")
+        $("#workoutId").val(data._id)
         console.log("success");
     })
 })
@@ -32,9 +33,10 @@ $(".submitExercise").on("click", function (event) {
         workoutData.duration = Number($("#duration").val().trim());
     }
     console.log(workoutData);
+    const workoutId = $("#workoutId").val().trim()
     $.ajax({
         method: "POST",
-        url: "/addexercise",
+        url: "/addexercise/" + workoutId,
         data: workoutData
     }).then(function (data) {
         console.log(data);
@@ -70,11 +72,20 @@ $("#previousWorkout").on("click", function (event) {
             $("#addExercise").removeClass("hide")
             $("#exerciseInput").removeClass("hide")
             $("#prevWorkout").removeClass("hide")
+            $("#workoutId").val(latestWorkoutId)
             console.log(latestWorkoutId);
             // Appending most recent workout ID to address bar
             // location.search = "?id=" + latestWorkoutId
         }
+    })
+})
 
-
+$("#viewExercise").on("click", function (event) {
+    event.preventDefault()
+    $.ajax({
+        method: "GET",
+        url: "/populateexercise"
+    }).then(function (data) {
+        console.log(data);
     })
 })
